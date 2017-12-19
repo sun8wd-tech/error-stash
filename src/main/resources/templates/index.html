@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr th:each="e:${pages.getContent()}">
+                <td th:text="${e.id}"></td>
+                <td th:text="${e.userId}"></td>
+                <td th:text="${e.username}"></td>
+                <td th:text="${e.os}"></td>
+                <td th:text="${e.browser}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

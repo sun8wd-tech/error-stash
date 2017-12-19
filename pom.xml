@@ -112,9 +112,12 @@
                 </includes>
             </resource>
             <resource>
-                <directory>${basedir}/src/main/resources/static</directory>
+                <directory>${basedir}/src/main/resources/</directory>
                 <filtering>false</filtering>
-                <targetPath>static</targetPath>
+                <includes>
+                    <include>static/</include>
+                    <include>templates/</include>
+                </includes>
                 <excludes>
                     <exclude>gulpfile.js</exclude>
                     <exclude>package.json</exclude>
