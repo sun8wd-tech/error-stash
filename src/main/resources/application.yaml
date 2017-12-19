@@ -1,0 +1,11 @@
+spring:
+  output.ansi.enabled: DETECT
+  profiles.active: '@profileActive@'
+  pidfile: .pid
+  http.multipart.maxFileSize: 10Mb
+  jackson.default-property-inclusion: non_null
+endpoints:
+  shutdown.enabled: true
+  shutdown.sensitive: false
+logging.path: logs
+

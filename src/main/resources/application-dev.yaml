@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      database: error-stash
+      host: 192.168.22.253
+      port: 27017
+  kafka:
+    bootstrap-servers: 192.168.22.253:9092,192.168.22.253:9093
+    consumer:
+      enable-auto-commit: true
+      group-id: errors
+      max-poll-records: 30
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
