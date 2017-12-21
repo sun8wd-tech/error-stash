@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="UTF-8" />
+<title>Title</title>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>用户id</td>
+			<td>用户姓名</td>
+			<td>模块</td>
+			<td>方法</td>
+			<td>主机</td>
+			<td>IP地址</td>
+			<td>浏览器</td>
+			<td>信息</td>
+			<td>创建时间</td>
+		</tr>
+
+		<tbody>
+
+
+			<tr th:each="e:${timeList}">
+
+				<td th:text="${e.id}"></td>
+				<td th:text="${e.userId}"></td>
+				<td th:text="${e.username}"></td>
+				<td th:text="${e.module}"></td>
+				<td th:text="${e.httpMethod}"></td>
+				<td th:text="${e.os}"></td>
+				<td th:text="${e.ip}"></td>
+				<td th:text="${e.browser}"></td>
+				<td th:text="${e.message}"></td>
+				<td th:text="${e.createTime}"></td>
+			</tr>
+		</tbody>
+
+
+	</table>
+</body>
+</html>
