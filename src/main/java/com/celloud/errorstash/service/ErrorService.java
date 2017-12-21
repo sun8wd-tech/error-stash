@@ -1,6 +1,8 @@
 package com.celloud.errorstash.service;
 
 import com.celloud.errorstash.model.Error;
+import com.celloud.errorstash.model.QueryVo;
+
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -20,4 +22,8 @@ public interface ErrorService {
      * @return
      */
     Page<Error> findAll(int page, int size);
+
+	Error  findOne(String id);
+
+	List<Error> findByQuery(QueryVo queryVo);
 }
