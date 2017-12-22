@@ -61,8 +61,6 @@ public class ErrorServiceImpl implements ErrorService {
 			criteria.and("module").is(queryError.getModule());
 		}
 		
-		
-		
 		if(queryError.getStartTime()!=null&& queryError.getEndTime()!=null){
 			
 			criteria.and("createTime").gte(queryError.getStartTime()).lte(queryError.getEndTime());
@@ -70,6 +68,7 @@ public class ErrorServiceImpl implements ErrorService {
 			criteria.and("createTime").gte(queryError.getStartTime());
 		}else if(queryError.getEndTime()!=null){
 			criteria.and("createTime").lte(queryError.getEndTime());
+			
 		}
 		
 		query.addCriteria(criteria);

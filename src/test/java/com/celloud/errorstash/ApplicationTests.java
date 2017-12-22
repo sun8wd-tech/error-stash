@@ -27,8 +27,6 @@ public class ApplicationTests {
 		queryError.setUserId(12);
 		queryError.setUsername("sunwd");
 		queryError.setModule("errorStash");
-		
-		
 		List<Error> list = errorService.findByQuery(queryError);
 		
 		System.out.println("***********"+list.size()+"*************");
