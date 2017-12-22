@@ -1,11 +1,13 @@
 package com.celloud.errorstash.model;
 
-public class QueryVo {
+import java.util.Date;
+
+public class QueryError {
 	private Integer userId;
 	private String module;
 	private String username;
-	private String startTime;
-	private String endTime;
+	private Date startTime;
+	private Date endTime;
 	
 	public Integer getUserId() {
 		return userId;
@@ -25,18 +27,19 @@ public class QueryVo {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getStartTime() {
+	public Date getStartTime() {
 		return startTime;
 	}
-	public void setStartTime(String startTime) {
+	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
-	public String getEndTime() {
+	public Date getEndTime() {
 		return endTime;
 	}
-	public void setEndTime(String endTime) {
+	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
+	
 	
 	
 	

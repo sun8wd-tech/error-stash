@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.celloud.errorstash.config.StringToDateConverter;
 import com.celloud.errorstash.model.Error;
-import com.celloud.errorstash.model.QueryVo;
+import com.celloud.errorstash.model.QueryError;
 import com.celloud.errorstash.service.ErrorService;
 
 /**
@@ -47,12 +47,10 @@ public class TestAction {
     
     //多个条件组合查询
     @RequestMapping(value="/query",method=RequestMethod.GET)
-    public String findByQuery(QueryVo queryVo,Model modle){
+    public String findByQuery(QueryError queryError,Model modle){
     	
-    	List<Error> list=errorService.findByQuery(queryVo);
+    	List<Error> list=errorService.findByQuery(queryError);
     	modle.addAttribute("list", list);
-    	
-    	
     	return "userList";
     	
     	

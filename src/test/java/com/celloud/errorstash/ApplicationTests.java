@@ -1,5 +1,7 @@
 package com.celloud.errorstash;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -9,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.celloud.errorstash.model.Error;
-import com.celloud.errorstash.model.QueryVo;
+import com.celloud.errorstash.model.QueryError;
 import com.celloud.errorstash.service.ErrorService;
 
 @RunWith(SpringRunner.class)
@@ -21,17 +23,17 @@ public class ApplicationTests {
 	@Test
 	public void contextLoads() {
 		
-		QueryVo queryVo=new QueryVo();
-	     queryVo.setUserId(12);
-	     queryVo.setUsername("sunwd");
-		queryVo.setModule("errorStash");
-		queryVo.setStartTime("2017-12-19 12:20:18");
-		queryVo.setEndTime("2017-12-19 12:45:32");
-		List<Error> list = errorService.findByQuery(queryVo);
+		QueryError queryError=new QueryError();
+		queryError.setUserId(12);
+		queryError.setUsername("sunwd");
+		queryError.setModule("errorStash");
+		
+		
+		List<Error> list = errorService.findByQuery(queryError);
 		
 		System.out.println("***********"+list.size()+"*************");
 		for (Error error : list) {
-			System.out.println(error.getBrowser());
+			System.out.println(error.getCreateTime());
 		}
 		
 	}
