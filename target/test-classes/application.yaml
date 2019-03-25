@@ -1,0 +1,16 @@
+spring:
+  output.ansi.enabled: DETECT
+  profiles.active: '@profileActive@'
+  pidfile: .pid
+  http.multipart.maxFileSize: 10Mb
+  jackson.default-property-inclusion: non_null
+  data:
+    mongodb:
+      database: error-stash
+      host: 192.168.22.253
+      port: 27017
+endpoints:
+  shutdown.enabled: true
+  shutdown.sensitive: false
+logging.path: logs
+
